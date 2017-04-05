@@ -83,8 +83,11 @@ class empleadosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_empleados)
     {
-        //
+      
+   \DB::table('empleados')->where('id_empleado',$id_empleados)->delete();
+
+      return back();
     }
 }

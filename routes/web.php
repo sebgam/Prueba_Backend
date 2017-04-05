@@ -17,6 +17,12 @@ Route::get('/listarempleados', 'empleadosController@index');
 Route::group(['prefijo' => 'empresas'], function () {
    
     Route::resource('empresas','empresaController');
+    Route::get('{id}/empresas/',[
+    	'uses' => 'empresaController@destroy',
+    	'as'=>'empresas.destroy',
+
+    	]);
+
 
    
 });
@@ -24,6 +30,11 @@ Route::group(['prefijo' => 'empresas'], function () {
 Route::group(['prefij' => 'empleados'], function () {
    
     Route::resource('empleados','empleadosController');
+    Route::get('{id_empleados}/empleados/',[
+    	'uses' => 'empleadosController@destroy',
+    	'as'=>'empleados.destroy',
+
+    	]);
 
    
 });

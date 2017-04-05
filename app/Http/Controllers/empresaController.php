@@ -87,6 +87,11 @@ class empresaController extends Controller
      */
     public function destroy($id)
     {
-        //
+      
+    $user = Empresa::find($id);
+    $user->delete();
+
+      return back();
+        
     }
 }

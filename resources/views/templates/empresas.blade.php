@@ -19,7 +19,7 @@
             <td>{{$empresa->nombre}}</td>
             <td>{{$empresa->direccion}}</td>
             <td>{{$empresa->correo}}</td>
-            <td><a href=""><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href="{{route('empresas.destroy',$empresa->id)}}"><span class="glyphicon glyphicon-trash"></span></a></td>
             <td><a href=""><span class="glyphicon glyphicon-refresh"></span></a></td>
         </tr>
     

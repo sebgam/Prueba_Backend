@@ -22,7 +22,7 @@
             <td>{{$empleado->apellido}}</td>
             <td>{{$empleado->direccion}}</td>
             <td>{{$empleado->correo}}</td>
-            <td><a href=""><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href="{{route('empleados.destroy',$empleado->id_empleado)}}"><span class="glyphicon glyphicon-trash"></span></a></td>
             <td><a href=""><span class="glyphicon glyphicon-refresh"></span></a></td>
         </tr>
     
