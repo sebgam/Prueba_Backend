@@ -5,9 +5,8 @@
 
 @section('section')
 
-@include('templates.empresas')
+@include('templates.listarEmpleadosd')
  
-{!! $paginacion->render()!!}
+
 
 @endsection    
-

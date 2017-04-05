@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'empresaController@index');
+Route::get('/listarempleados', 'empleadosController@index');
+
+Route::group(['prefijo' => 'empresas'], function () {
+   
+    Route::resource('empresas','empresaController');
+
+   
+});
+
+Route::group(['prefij' => 'empleados'], function () {
+   
+    Route::resource('empleados','empleadosController');
+
+   
 });
