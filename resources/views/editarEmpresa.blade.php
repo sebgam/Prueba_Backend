@@ -4,7 +4,8 @@
 
 
 @section('section')
-
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
 <div class="alert alert-warning">Editar empresa {{$empresa->nombre}}</div>
 
 {!! Form::open(['route' => ['empresas.update', $empresa->id], 'method' => 'PUT']) !!}
@@ -25,7 +26,8 @@
   
 {!! Form::close() !!}
 
-
+</div>
+   </div>
 
 
 @endsection    

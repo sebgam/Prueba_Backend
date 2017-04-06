@@ -1,3 +1,7 @@
+@if(session()->has('msjem'))
+<div class="alert alert-danger" role="alert">{{session('msjem')}}</div>
+@endif
+
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
         <tr class="danger">
@@ -22,7 +26,7 @@
             <td>{{$empleado->apellido}}</td>
             <td>{{$empleado->direccion}}</td>
             <td>{{$empleado->correo}}</td>
-            <td><a href="{{route('empleados.destroy',$empleado->id_empleado)}}"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href="{{route('empleados.destroy',$empleado->id_empleado)}}" onclick="return confirm('¿seguro que deseas eliminar este empleado?')"><span class="glyphicon glyphicon-trash"></span></a></td>
             <td><a href="{{route('empleados.edit',$empleado->id_empleado)}}"><span class="glyphicon glyphicon-refresh"></span></a></td>
         </tr>
     

@@ -15,11 +15,11 @@ class empleadosController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::all();
+         
 
-        $users = \DB::table('empleados')->paginate(2);
+        $empleados = \DB::table('empleados')->paginate(2);
 
-        return view('listarEmpleados',['empleados'=>$empleados,'paginacion'=>$users]);
+        return view('listarEmpleados')->with('empleados',$empleados);
     }
 
     /**
@@ -42,7 +42,7 @@ class empleadosController extends Controller
     {
         $empleado = new Empleado($request->all());
         $empleado->save();
-        return back();
+        return back()->with('msj', 'Datos guardados');
     }
 
     /**
@@ -101,6 +101,6 @@ class empleadosController extends Controller
       
    \DB::table('empleados')->where('id_empleado',$id_empleados)->delete();
 
-      return back();
+      return back()->with('msjem', 'Empleado  eliminado');
     }
 }

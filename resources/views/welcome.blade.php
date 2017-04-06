@@ -7,7 +7,7 @@
 
 @include('templates.empresas')
  
-{!! $paginacion->render()!!}
+{!! $empresas->render()!!} 
 
 @endsection    
 

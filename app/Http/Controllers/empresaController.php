@@ -14,10 +14,10 @@ class empresaController extends Controller
      */
     public function index()
     {
-        $empresas = Empresa::all();
-        $users = \DB::table('empresa')->paginate(2);
+       
+        $empresas = \DB::table('empresa')->paginate(4);
 
-        return view('welcome',['empresas'=>$empresas,'paginacion'=>$users]);
+        return view('welcome')->with('empresas',$empresas);
 
     }
 
@@ -40,9 +40,11 @@ class empresaController extends Controller
     public function store(Request $request)
     {
         $empresa = new Empresa($request->all());
+
+
         $empresa->save();
 
-        return back();
+        return back()->with('msj', 'Datos guardados');
     }
 
     /**
@@ -98,7 +100,8 @@ class empresaController extends Controller
     $empresa = Empresa::find($id);
     $empresa->delete();
 
-      return back();
+
+      return back()->with('msje', 'la empresa ' . $empresa->nombre . ' ah sido eliminada' );
         
     }
 }

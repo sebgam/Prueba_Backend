@@ -7,6 +7,6 @@
 
 @include('templates.listarEmpleadosd')
  
-
+{!! $empleados->render()!!} 
 
 @endsection    

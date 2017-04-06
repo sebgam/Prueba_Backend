@@ -1,3 +1,4 @@
+
 @extends('templates.main')
 @section('titulo','Inicio ')
     
@@ -5,7 +6,11 @@
 
 @section('section')
 
-
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
+@if(session()->has('msj'))
+<div class="alert alert-success" role="alert">{{session('msj')}}</div>
+@endif
 <form action="/empleados" method="POST">
     {{csrf_field()}}
     <div class="form-group">
@@ -35,6 +40,7 @@
     <button type="submit" class="btn btn-primary">Guardar</button>
   </form>  
 
-
+</div>
+</div>
 
 @endsection    

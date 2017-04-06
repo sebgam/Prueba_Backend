@@ -179,6 +179,7 @@ return [
 
         //mis-providers------------
          Collective\Html\HtmlServiceProvider::class,
+         Laracasts\Flash\FlashServiceProvider::class,
 
 
 
