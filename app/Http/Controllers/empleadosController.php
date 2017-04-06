@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Empleado;
+use App\Http\Controllers\Controller;
 
 class empleadosController extends Controller
 {
@@ -15,6 +16,7 @@ class empleadosController extends Controller
     public function index()
     {
         $empleados = Empleado::all();
+
         $users = \DB::table('empleados')->paginate(2);
 
         return view('listarEmpleados',['empleados'=>$empleados,'paginacion'=>$users]);
@@ -60,9 +62,10 @@ class empleadosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_empleado)
     {
-        //
+       $empleados = Empleado::find('id_empleado'=>$id_empleado);
+        return view('editarEmpleado')->with('empleados', $empleados);
     }
 
     /**
@@ -72,9 +75,18 @@ class empleadosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_empleado)
     {
-        //
+         $empleados = Empleado::find($id_empleado);
+        $empleados->id_empleado = $request->id_empleado;
+        $empleados->id_empresa = $request->id_empresa;
+        $empleados->nombre = $request->nombre;
+        $empleados->apellido = $request->apellido;
+        $empleados->direccion = $request->direccion;
+        $empleados->correo = $request->correo;
+        $empleados->save();
+
+       return redirect('/listarempleados');
     }
 
     /**

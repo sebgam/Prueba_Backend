@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', 'empresaController@index');
-Route::get('/listarempleados', 'empleadosController@index');
+
 
 Route::group(['prefijo' => 'empresas'], function () {
    
@@ -38,3 +37,6 @@ Route::group(['prefij' => 'empleados'], function () {
 
    
 });
+
+Route::get('/', 'empresaController@index');
+Route::get('/listarempleados', 'empleadosController@index');

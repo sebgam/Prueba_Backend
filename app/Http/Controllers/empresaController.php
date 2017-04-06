@@ -64,7 +64,8 @@ class empresaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $empresa = Empresa::find($id);
+        return view('editarEmpresa')->with('empresa', $empresa);
     }
 
     /**
@@ -76,7 +77,13 @@ class empresaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $empresas = Empresa::find($id);
+        $empresas->nombre = $request->nombre;
+        $empresas->direccion = $request->direccion;
+        $empresas->correo = $request->correo;
+        $empresas->save();
+
+       return redirect('/');
     }
 
     /**
@@ -88,8 +95,8 @@ class empresaController extends Controller
     public function destroy($id)
     {
       
-    $user = Empresa::find($id);
-    $user->delete();
+    $empresa = Empresa::find($id);
+    $empresa->delete();
 
       return back();
         
