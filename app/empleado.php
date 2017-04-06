@@ -9,6 +9,7 @@ class empleado extends Model
     protected $table = "empleados";
 	protected $fillable = ['id_empleado','id_empresa','nombre','apellido','direccion','correo'];
 	 protected $filetable = ['id_empleado','id_empresa','nombre','apellido','direccion','correo'];
+	 protected $primaryKey = 'id_empleado';
 
 public function empresa()
     {

@@ -62,9 +62,10 @@ class empleadosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_empleado)
+    public function edit($id)
     {
-       $empleados = Empleado::find('id_empleado'=>$id_empleado);
+        $empleados = Empleado::find($id);
+
         return view('editarEmpleado')->with('empleados', $empleados);
     }
 
