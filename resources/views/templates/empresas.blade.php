@@ -23,7 +23,20 @@
             <td>{{$empresa->nombre}}</td>
             <td>{{$empresa->direccion}}</td>
             <td>{{$empresa->correo}}</td>
-            <td><a href="{{route('empresas.destroy',$empresa->id)}}" onclick="return confirm('¿seguro que deseas eliminar esta empresa?')"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href="{{route('empresas.destroy',$empresa->id)}}" onclick="return confirm('¿seguro que deseas eliminar esta empresa?')" class="btn"  
+            <?php $contador =0; ?>
+            @foreach($empleados as $empleado)
+                @if($empresa->id == $empleado->id_empresa)
+                 <?php $contador++; ?>
+                @endif
+            @endforeach
+            @if($contador > 0)
+            <?php echo "disabled title='la empresa tiene usuarios registrados no puedes eliminarla'"; ?>
+            @endif
+            ><span class="glyphicon glyphicon-trash"></span></a>
+            @if($contador > 0)
+             Numero de empleados {{ $contador}}
+            @endif</td>
             <td><a href="{{route('empresas.edit',$empresa->id)}}"><span class="glyphicon glyphicon-refresh"></span></a></td>
         </tr>
     
@@ -34,4 +47,5 @@
 </table>
 
    </div>
+
 

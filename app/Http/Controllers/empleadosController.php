@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Empleado;
+use App\Empresa;
 use App\Http\Controllers\Controller;
 
 class empleadosController extends Controller
@@ -16,10 +17,10 @@ class empleadosController extends Controller
     public function index()
     {
          
-
+        $empresa = Empresa::all();
         $empleados = \DB::table('empleados')->paginate(2);
 
-        return view('listarEmpleados')->with('empleados',$empleados);
+        return view('listarEmpleados',['empleados'=>$empleados , 'empresas'=>$empresa]);
     }
 
     /**
@@ -29,7 +30,8 @@ class empleadosController extends Controller
      */
     public function create()
     {
-        return view('empleados');
+        $empresa = Empresa::all();
+        return view('empleados')->with('empresas',$empresa);
     }
 
     /**

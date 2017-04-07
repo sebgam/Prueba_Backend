@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Empresa;
+use App\Empleado;
 
 class empresaController extends Controller
 {
@@ -14,10 +15,10 @@ class empresaController extends Controller
      */
     public function index()
     {
-       
+       $empleados = Empleado::all();
         $empresas = \DB::table('empresa')->paginate(4);
 
-        return view('welcome')->with('empresas',$empresas);
+        return view('welcome',['empresas'=>$empresas, 'empleados'=>$empleados]);
 
     }
 
@@ -28,6 +29,7 @@ class empresaController extends Controller
      */
     public function create()
     {
+        
         return view('empresas');
     }
 

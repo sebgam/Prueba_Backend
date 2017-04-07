@@ -18,9 +18,15 @@
       <input type="text" id="id_empleado" name="id_empleado" class="form-control" placeholder="id_empleado">
     </div>
      <div class="form-group">
-      <label for="id_empresa">id empresa</label>
-      <input type="text" id="id_empresa" name="id_empresa" class="form-control" placeholder="id_empresa">
-    </div>
+     <label for="id_empresa">id_empresa</label>
+     <select class="form-control" name="id_empresa" id="option">Elige empresa:
+
+     @foreach($empresas as $empresa)
+          <option value="{{$empresa->id}}">{{$empresa->nombre}}</option>
+     @endforeach
+            
+     </select>
+      </div>
     <div class="form-group">
       <label for="nombre">Nombre</label>
       <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">

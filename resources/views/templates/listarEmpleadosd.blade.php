@@ -7,6 +7,7 @@
         <tr class="danger">
             <th>#ID</th>
             <th>#ID_empresa</th>
+            <th>Nombre empresa</th>
             <th>Nombre</th>
             <th>apellido</th>
             <th>Direccion</th>
@@ -22,6 +23,14 @@
  <tr>
             <td>{{$empleado->id_empleado}}</td>
             <td>{{$empleado->id_empresa}}</td>
+            <td>
+                @foreach($empresas as $empresa)
+                @if($empresa->id == $empleado->id_empresa)
+                    {{$empresa->nombre}}
+                @endif    
+                @endforeach
+            </td>
+
             <td>{{$empleado->nombre}}</td>
             <td>{{$empleado->apellido}}</td>
             <td>{{$empleado->direccion}}</td>

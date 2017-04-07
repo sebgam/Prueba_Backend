@@ -1,6 +1,6 @@
  $(document).ready(function(){
 
-         $("#formRegistro").submit(function(){
+         $("form").submit(function(){
 
             var inputs = document.querySelectorAll("input[type='text'],input[type='password']");
                for(var i=0; i < inputs.length;i++){
