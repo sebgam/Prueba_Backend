@@ -40,3 +40,7 @@ Route::group(['prefij' => 'empleados'], function () {
 
 Route::get('/', 'empresaController@index');
 Route::get('/listarempleados', 'empleadosController@index');
+
+
+Route::post('/consultar-empresa', 'Controller@consultarEmpresa');
+Route::post('/consultar-empleados', 'Controller@consultarEmpleados');

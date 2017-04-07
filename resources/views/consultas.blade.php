@@ -5,38 +5,67 @@
 
 @section('section')
 
+<div class="row">
+          <div class="col-md-6 col-md-offset-3">
+              
+              <div role="tabpanel">
+                  <ul class="nav nav-tabs" role="tablist">
+                      <li role="presentation" class="active"><a href="#seccion1" aria-controls="seccion1" data-toggle="tab" role="tab">Consultar Empleados</a></li>
+                      <li role="presentation" class=""><a href="#seccion2" aria-controls="seccion2" data-toggle="tab" role="tab">consultar Empresas</a></li>
+                      
+                  </ul>
+              </div>
+              
+              <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="seccion1">
+                  </br></br></br>
+                      {!! Form::open(['url' => '/consultar-empresa']) !!}
+                         <div class="row">
+                           <div class="col-md-6 col-md-offset-3">
+                        <div class="alert alert-success" role="alert">Buscar Empleado</div>
+                         <div class="form-group">
+                            <label for="id_empleado">id empleado</label>
+                           <input type="text" id="id_empleado" name="id_empleado" class="form-control" placeholder="id_empleado" >
+                         </div>                       
+                         <button type="submit" class="btn btn-primary">Buscar</button>     
+                           </div>
+                         </div>
+                      {!! Form::close() !!}
+                  </div>
+                  
+                   <div role="tabpanel" class="tab-pane" id="seccion2">
+                   </br></br></br>
+                      {!! Form::open(['url' => '/consultar-empleados']) !!}
+                          <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                         <div class="alert alert-success" role="alert">Buscar Empresa</div>
+                           <div class="form-group">
+                            <label for="id_empresa">id empresa</label>
+                            <input type="text" id="id_empresa" name="id_empresa" class="form-control" placeholder="id_empresa" value="1" >
+                          </div>
+                          
+                          <button type="submit" class="btn btn-primary">Buscar</button>
+                        </div>
+                          </div>
+                      {!! Form::close() !!}
 
-<div class="alert alert-warning">Editar empleado {{$empleados->nombre}}</div>
+                  </div>
+                  
+                   
+                  
+                  
+                  
+              </div>
+              
+              
+              
+          </div>
+      </div>
 
-{!! Form::open(['route' => ['empleados.update', $empleados->id_empleado], 'method' => 'PUT']) !!}
-    
-    <div class="form-group">
-      <label for="id_empleado">id empleado</label>
-      <input type="text" id="id_empleado" name="id_empleado" class="form-control" placeholder="id_empleado" value="{{$empleados->id_empleado}}">
-    </div>
-     <div class="form-group">
-      <label for="id_empresa">id empresa</label>
-      <input type="text" id="id_empresa" name="id_empresa" class="form-control" placeholder="id_empresa" value="{{$empleados->id_empresa}}">
-    </div>
-    <div class="form-group">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value="{{$empleados->nombre}}">
-    </div>
-     <div class="form-group">
-      <label for="apellido">Apellido</label>
-      <input type="text" id="apellido" name="apellido" class="form-control" placeholder="apellido" value="{{$empleados->apellido}}">
-    </div>
-    <div class="form-group">
-      <label for="direccion">Direccion</label>
-      <input type="text" id="direccion" name="direccion" class="form-control" placeholder="direccion" value="{{$empleados->direccion}}">
-    </div>
-     <div class="form-group">
-      <label for="correo">correo</label>
-      <input type="email" id="correo" name="correo" class="form-control" placeholder="Correo" value="{{$empleados->correo}}">
-    </div>
-    <button type="submit" class="btn btn-primary">Editar</button>
-  
-{!! Form::close() !!}
+
+
+
 
 
 @endsection
+

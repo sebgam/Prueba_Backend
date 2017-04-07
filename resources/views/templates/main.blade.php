@@ -33,7 +33,7 @@
                     <li><a href="{{url('/empresas/create')}}"><span class="glyphicon glyphicon-pencil"></span> CREAR EMPRESAS</a></li>
                     <li><a href="{{url('/empleados/create')}}"><span class="glyphicon glyphicon-tasks"></span> CREAR EMPLEADOS</a></li>
                     <li><a href="{{url('/listarempleados')}}" data-toggle="modal"> <span class="glyphicon glyphicon-log-in"></span> LISTA EMPLEADOS</a></li>
-                    <li><a href="" data-toggle="modal"> <span class="glyphicon glyphicon-zoom-in"></span>CONSULTAS</a></li>
+                    <li><a href="{{url('empresas/show')}}" data-toggle="modal"> <span class="glyphicon glyphicon-zoom-in"></span>CONSULTAS</a></li>
       </ul>
                 </div> 
             </div> 

@@ -57,7 +57,7 @@ class empresaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('consultas');
     }
 
     /**

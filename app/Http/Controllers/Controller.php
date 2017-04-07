@@ -10,4 +10,20 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+	public function consultarEmpresa(){
+
+		return 'correcto empre';
+	}
+
+	public function consultarEmpleados(){
+		return 'correcto emple';
+
+	}
+
+
+
+
 }
+
+
