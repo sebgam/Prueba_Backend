@@ -24,8 +24,8 @@
                            <div class="col-md-6 col-md-offset-3">
                         <div class="alert alert-success" role="alert">Buscar Empleado</div>
                          <div class="form-group">
-                            <label for="id_empleado">id empleado</label>
-                           <input type="text" id="id_empleado" name="id_empleado" class="form-control" placeholder="id_empleado" >
+                            <label for="id_empleado">Id empleado</label>
+                           <input type="text" id="id_empleado" name="id_empleado" class="form-control" placeholder="id empleado" >
                          </div>                       
                          <button type="submit" class="btn btn-primary">Buscar</button>     
                            </div>
@@ -40,8 +40,8 @@
                             <div class="col-md-6 col-md-offset-3">
                          <div class="alert alert-success" role="alert">Buscar Empresa</div>
                            <div class="form-group">
-                            <label for="id_empresa">id empresa</label>
-                            <input type="text" id="id_empresa" name="id_empresa" class="form-control" placeholder="id_empresa" value="1" >
+                            <label for="id_empresa">Id empresa</label>
+                            <input type="text" id="id_empresa" name="id_empresa" class="form-control" placeholder="id empresa" value="" >
                           </div>
                           
                           <button type="submit" class="btn btn-primary">Buscar</button>
